@@ -1,5 +1,10 @@
+import os
 from flask import Flask
+
 app = Flask(__name__)
+# Get the ennvironment we are currently on by loading the APP_SETTINGS environment variable
+app.config.from_object(os.environ['APP_SETTINGS'])
+
 
 # Index method - entry point into the application
 @app.route("/")
